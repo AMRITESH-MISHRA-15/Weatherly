@@ -1,16 +1,19 @@
 const dotenv = require('dotenv');
+dotenv.config();
+
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth');
+const weatherRoutes = require('./routes/weather');
 
-dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
+app.use('/api/weather', weatherRoutes);
 
 // Default route
 app.get('/', (req, res) => {
