@@ -21,7 +21,7 @@ function WeatherCard({ weatherData }) {
   } = weatherData;
 
   return (
-    <div className="bg-gradient-to-br from-blue-100 to-blue-200 shadow-xl rounded-2xl p-6 max-w-md mx-auto mt-10">
+    <div className="bg-white/30 backdrop-blur-md shadow-xl rounded-2xl p-6 max-w-md w-full mx-auto mt-10 border border-white/40">
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold">{city}, {country}</h2>
