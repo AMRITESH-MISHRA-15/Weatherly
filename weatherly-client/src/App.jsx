@@ -1,14 +1,25 @@
 import Navbar from "./components/Navbar";
 import SearchBar from "./components/SearchBar";
+import WeatherCard from "./components/WeatherCard";
 
 function App() {
+  // Dummy data for now
+  const mockWeatherData = {
+    city: "Delhi",
+    country: "IN",
+    temperature: 32,
+    description: "Clear sky",
+    icon: "01d",
+    feelsLike: 35,
+    humidity: 42,
+    windSpeed: 10,
+  };
+
   return (
     <>
       <Navbar />
-      <div className="text-center mt-10 text-xl text-gray-700">
-        Hello World
-      </div>
       <SearchBar />
+      <WeatherCard weatherData={mockWeatherData} />
     </>
   );
 }
