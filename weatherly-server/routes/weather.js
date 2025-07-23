@@ -14,12 +14,22 @@ router.get('/city/:cityName', async (req, res) => {
 
     const data = response.data;
 
-    res.json({
-      city: data.name,
-      temperature: data.main.temp,
-      humidity: data.main.humidity,
-      condition: data.weather[0].main,
-    });
+   res.json({
+    city: data.name,
+    temperature: data.main.temp,
+    feels_like: data.main.feels_like,
+    humidity: data.main.humidity,
+    condition: data.weather[0].main,
+    description: data.weather[0].description,
+    wind_speed: data.wind.speed,
+    visibility: data.visibility,
+    coordinates: {
+      lat: data.coord.lat,
+      lon: data.coord.lon,
+    },
+    sunrise: data.sys.sunrise,
+    sunset: data.sys.sunset,
+  });
   } catch (err) {
     res.status(500).json({ message: 'Failed to fetch weather data', error: err.message });
   }
