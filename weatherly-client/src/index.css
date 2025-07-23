@@ -7,9 +7,3 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
-
-
-body {
-  @apply min-h-screen flex flex-col items-center justify-center text-gray-800;
-  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-}
